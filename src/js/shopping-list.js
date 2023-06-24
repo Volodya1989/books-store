@@ -46,7 +46,7 @@ const logOut = e => {
       setTimeout(
         () =>
           (window.location =
-            'https://Volodya1989.github.io/project-team-10-added-features/login.html'),
+            'https://volodya1989.github.io/books-store/login.html'),
         3000
       );
     })
@@ -65,7 +65,7 @@ const signUp = () => {
       setTimeout(
         () =>
           (window.location =
-            'https://Volodya1989.github.io/project-team-10-added-features/sign-up.html'),
+            'https://volodya1989.github.io/books-store/sign-up.html'),
         3000
       );
     })
