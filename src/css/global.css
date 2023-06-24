@@ -135,7 +135,9 @@ body.dark-theme {
     (100% - (var(--flex-item) - 1) * var(--flex-item-gap)) / var(--flex-item)
   );
 }
-
+.main-block {
+  padding-top: 100px;
+}
 .main-block > .container {
   display: flex;
   flex-direction: column;
