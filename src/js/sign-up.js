@@ -82,7 +82,7 @@ const onSubmit = e => {
       setTimeout(
         () =>
           (window.location =
-            'https://millenialia.github.io/project-team-10-added-features/'),
+            'https://Volodya1989.github.io/project-team-10-added-features/'),
         3000
       );
     })
