@@ -80,9 +80,7 @@ const onSubmit = e => {
         `${username}, you  successfully signed up and loginnig in now...!`
       );
       setTimeout(
-        () =>
-          (window.location =
-            'https://Volodya1989.github.io/project-team-10-added-features/'),
+        () => (window.location = 'https://volodya1989.github.io/books-store/'),
         3000
       );
     })
