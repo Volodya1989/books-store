@@ -46,7 +46,7 @@ const logOut = e => {
       setTimeout(
         () =>
           (window.location =
-            'https://millenialia.github.io/project-team-10-added-features/login.html'),
+            'https://Volodya1989.github.io/project-team-10-added-features/login.html'),
         3000
       );
     })
@@ -65,7 +65,7 @@ const signUp = () => {
       setTimeout(
         () =>
           (window.location =
-            'https://millenialia.github.io/project-team-10-added-features/sign-up.html'),
+            'https://Volodya1989.github.io/project-team-10-added-features/sign-up.html'),
         3000
       );
     })
