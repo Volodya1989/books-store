@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://volodya1989.github.io/project-team-10-added-features",
+  "homepage": "https://volodya1989.github.io/books-store",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /project-team-10-added-features/"
+    "build": "parcel build src/*.html --public-url /books-store/"
   },
   "repository": {
     "type": "git",
