@@ -7,7 +7,6 @@ import {
 const plug = document.querySelector('.shop_plug');
 const div_card_container = document.querySelector('.js-shop_card');
 let number_of_books = Object.keys(shopping_info.shopping_list).length;
-console.log('number of books ', number_of_books);
 // addBook();
 
 div_card_container.addEventListener('click', onClickDel);
