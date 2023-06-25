@@ -146,10 +146,21 @@ export function saveShoppingList(listBooks) {
 }
 
 export function removeShoppingListBoock(idBoock) {
-  console.log(shopping_info);
+  Notiflix.Notify.init({
+    width: '300px',
+    position: 'center-top',
+    distance: '20px',
+    borderRadius: '10px',
+
+    remove: {
+      background: '#eac645',
+      notiflixIconColor: '#eac645;',
+    },
+  });
   for (const key in shopping_info.shopping_list) {
     if (key === idBoock) delete shopping_info.shopping_list[key];
   }
+  Notiflix.Notify.warning(`Book is REMOVED from your cart!`);
 
   saveShoppingList(shopping_info);
 }
