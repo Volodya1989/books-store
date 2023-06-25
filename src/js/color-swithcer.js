@@ -60,3 +60,7 @@ function closeLogoutModal() {
   logoutModal.style.display = 'none';
   isLogoutModalOpen = false;
 }
+
+function logout() {
+  // Додайте код для виходу з облікового запису або виконайте необхідні дії
+}
