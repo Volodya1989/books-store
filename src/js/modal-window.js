@@ -16,12 +16,12 @@ export function modalWindow() {
 
   cardList.addEventListener('click', e => {
     e.preventDefault();
+
     const linkId = e.target.closest('.global-link');
     if (linkId && linkId.hasAttribute('data-id')) {
       const dataId = e.target.closest('.global-link').getAttribute('data-id');
       fetchBook(dataId)
         .then(data => {
-
           modal.classList.remove('is-hidden');
           body.classList.add('modal-open');
           markupModal(data);
@@ -54,6 +54,7 @@ export function modalWindow() {
     }
 
     function markupModal({
+      _id,
       book_image,
       author,
       title,
@@ -69,31 +70,35 @@ export function modalWindow() {
                         <p class="book-author light-theme theme-switch global-p">${author}</p>
                         <p class="book-descr light-theme theme-switch global-p">${description}</p>
                         <ul class="shops-list global-list">
-                            <li class="shop-list-item"><a class="shop-link global-link" href="${
+                            <li class="shop-list-item"><a class="shop-link global-link" target="_blank"  href="${
                               buy_links[0].url
                             }."><img class="shop-icon theme-switch light-theme" src=${require('../images/modal-window-book/icons/amazon_bk.png')} alt="amazon" width="62" height="19"/></a></li>
-                            <li class="shop-list-item"><a class="shop-link global-link" href="${
+                            <li class="shop-list-item"><a class="shop-link global-link" target="_blank"  href="${
                               buy_links[1].url
                             }"><img class="shop-icon" src=${require('../images/modal-window-book/icons/open-book_bk.png')} alt="apple-book" width="32" height="32"/></a></li>
-                            <li class="shop-list-item"><a class="shop-link global-link" href="${
+                            <li class="shop-list-item"><a class="shop-link global-link" target="_blank"  href="${
                               buy_links[4].url
                             }"><img class="shop-icon" src=${require('../images/modal-window-book/icons/book-shop_bk.png')} alt="book-shop" width="38" height="36"/></a></li>
                         </ul>
                     </div>
                     </div>
-                    <button class="add-rem-btn light-theme theme-switch global-button" type="button">xxxXXXxxx</button>
+                    
+                    <button class="add-rem-btn light-theme theme-switch global-button" type="button">${
+                      shopping_info.shopping_list[_id]
+                        ? 'REMOVE FROM THE SHOPING LIST'
+                        : 'ADD TO SHOPING LIST'
+                    }</button>
                     <button class="close-btn light-theme theme-switch global-button" type="button">&times;</button>
                     <p class="congratulations global-p no-content">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
                 </div>`;
       shopping_info.theme === 'light'
-      ? renderTheme('light')
-      : renderTheme('dark');
+        ? renderTheme('light')
+        : renderTheme('dark');
     }
 
     function funcBtn(id, book) {
       const addRemBtn = document.querySelector('.add-rem-btn');
       const congratulations = document.querySelector('.congratulations');
-      addRemBtn.textContent = 'ADD TO SHOPING LIST';
       addRemBtn.addEventListener('click', function () {
         if (!shopping_info.shopping_list[id]) {
           addBook(id, book);
