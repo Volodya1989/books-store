@@ -50,7 +50,7 @@ export function modalWindow() {
           });
         })
         .catch(error => {
-          console.error(error);
+          console.log(error);
         });
     }
 

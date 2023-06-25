@@ -83,7 +83,6 @@ onAuthStateChanged(auth, user => {
     get(child(dbRef, `users/${userId}`))
       .then(snapshot => {
         if (snapshot.exists()) {
-          console.log('username', snapshot.val().username);
           localStorage.setItem(
             'username',
             JSON.stringify(snapshot.val().username)
@@ -137,11 +136,9 @@ export const shopping_info = JSON.parse(localStorage.getItem(userEmail)) || {
 };
 
 export function saveShoppingList(listBooks) {
-  console.log('user', userEmail);
   const number_of_books = Object.keys(listBooks.shopping_list).length;
   shoppingListEl.innerHTML = number_of_books ? number_of_books : '';
   localStorage.setItem('number_of_books', JSON.stringify(number_of_books));
-  console.log('number of books ', number_of_books);
   localStorage.setItem(userEmail, JSON.stringify(listBooks));
 }
 
