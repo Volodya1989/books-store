@@ -6,6 +6,7 @@ import { saveShoppingList, shopping_info } from './shopping-list';
 import { addBook, removeBook } from './books-action';
 import { fetchBook } from './fetch-func';
 import { renderTheme } from './switch-theme';
+import Notiflix from 'notiflix';
 
 export function modalWindow() {
   const body = document.querySelector('body');
@@ -97,17 +98,34 @@ export function modalWindow() {
     }
 
     function funcBtn(id, book) {
+      Notiflix.Notify.init({
+        width: '300px',
+        position: 'center-top',
+        distance: '20px',
+        borderRadius: '10px',
+        success: {
+          background: '#4f2ee8',
+          notiflixIconColor: '#eac645;',
+        },
+        remove: {
+          background: '#eac645',
+          notiflixIconColor: '#eac645;',
+        },
+      });
       const addRemBtn = document.querySelector('.add-rem-btn');
       const congratulations = document.querySelector('.congratulations');
       addRemBtn.addEventListener('click', function () {
         if (!shopping_info.shopping_list[id]) {
           addBook(id, book);
           shopping_info.shopping_list;
+          Notiflix.Notify.success(`Book is ADDED to your cart!`);
 
           addRemBtn.textContent = 'REMOVE FROM THE SHOPING LIST';
           congratulations.classList.remove('no-content');
         } else {
           removeBook(id);
+          Notiflix.Notify.warning(`Book is REMOVED from your cart!`);
+
           addRemBtn.textContent = 'ADD TO SHOPING LIST';
           congratulations.classList.add('no-content');
         }
